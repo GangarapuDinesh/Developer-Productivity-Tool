@@ -1,0 +1,357 @@
+.register-page {
+  --register-bg: #f3f6ff;
+  --register-card: #ffffff;
+  --register-text: #182544;
+  --register-muted: #758196;
+  --register-border: #e2e8f3;
+  --register-input: #ffffff;
+  --register-primary: #4568f5;
+  --register-primary-hover: #3454db;
+  --register-soft: #edf1ff;
+  --register-shadow: rgba(39, 59, 108, 0.12);
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  min-height: 0;
+  padding: 12px;
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  overflow: hidden;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(91, 124, 250, 0.13),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(34, 211, 238, 0.13),
+      transparent 40%
+    ),
+    var(--register-bg);
+  color: var(--register-text);
+  font-family: inherit;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+.register-page *,
+.register-page *::before,
+.register-page *::after {
+  box-sizing: border-box;
+}
+.register-page.theme-dark {
+  --register-bg: #0b1120;
+  --register-card: #151f33;
+  --register-text: #edf3ff;
+  --register-muted: #a0aec5;
+  --register-border: #2d3b54;
+  --register-input: #0e1729;
+  --register-primary: #627ff5;
+  --register-primary-hover: #7892ff;
+  --register-soft: #222f4b;
+  --register-shadow: rgba(0, 0, 0, 0.3);
+}
+.register-page.theme-eye {
+  --register-bg: #f1eddf;
+  --register-card: #fbf7e9;
+  --register-text: #39382e;
+  --register-muted: #77715e;
+  --register-border: #ded5bb;
+  --register-input: #fffdf4;
+  --register-primary: #82713c;
+  --register-primary-hover: #6e602f;
+  --register-soft: #eee7d3;
+  --register-shadow: rgba(87, 75, 42, 0.12);
+}
+.register-page .register-theme-switcher {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border: 1px solid var(--register-border);
+  border-radius: 12px;
+  background: var(--register-card);
+  color: var(--register-text);
+  box-shadow: 0 4px 16px var(--register-shadow);
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease;
+}
+.register-page .register-theme-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--register-primary);
+  font-size: 17px;
+}
+.register-page .register-theme-switcher label {
+  margin: 0;
+  color: var(--register-text);
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.register-page .register-theme-switcher select {
+  width: auto;
+  min-width: 105px;
+  min-height: 32px;
+  padding: 5px 8px;
+  border: 1px solid var(--register-border);
+  border-radius: 8px;
+  outline: none;
+  background: var(--register-input);
+  color: var(--register-text);
+  font-family: inherit;
+  font-size: 12px;
+  cursor: pointer;
+}
+.register-page .register-theme-switcher select:focus {
+  border-color: var(--register-primary);
+  box-shadow: 0 0 0 3px var(--register-soft);
+}
+.register-page .register-card {
+  width: min(100%, 440px);
+  max-height: 100%;
+  min-height: 0;
+  margin: 0;
+  padding: 26px 32px;
+  border: 1px solid var(--register-border);
+  border-radius: 22px;
+  background: var(--register-card);
+  color: var(--register-text);
+  box-shadow: 0 20px 60px var(--register-shadow);
+  overflow: hidden;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s ease;
+  animation: register-card-appear 0.4s ease both;
+}
+@keyframes register-card-appear {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.register-page .register-brand-icon {
+  width: 44px;
+  height: 44px;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 13px;
+  background: var(--register-soft);
+  color: var(--register-primary);
+  font-size: 22px;
+}
+.register-page .register-card h1 {
+  margin: 0 0 8px;
+  color: var(--register-text);
+  font-size: 27px;
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+.register-page .register-card .register-description {
+  margin: 0;
+  color: var(--register-muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.register-page .register-card form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 0;
+  margin-top: 17px;
+}
+.register-page .register-card form label {
+  display: block;
+  margin: 0;
+  color: var(--register-text);
+  font-size: 13px;
+  font-weight: 700;
+}
+.register-page .register-card input {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  min-height: 42px;
+  padding: 9px 12px;
+  border: 1px solid var(--register-border);
+  border-radius: 10px;
+  outline: none;
+  background: var(--register-input);
+  color: var(--register-text);
+  font-family: inherit;
+  font-size: 14px;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+.register-page .register-card input::placeholder {
+  color: var(--register-muted);
+  opacity: 0.8;
+}
+.register-page .register-card input:focus {
+  border-color: var(--register-primary);
+  box-shadow: 0 0 0 3px var(--register-soft);
+}
+.register-page .register-card form button {
+  width: 100%;
+  min-height: 45px;
+  margin-top: 7px;
+  padding: 11px 16px;
+  border: none;
+  border-radius: 10px;
+  background: var(--register-primary);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition:
+    background 0.2s ease,
+    transform 0.2s ease,
+    opacity 0.2s ease;
+}
+.register-page .register-card form button:hover:not(:disabled) {
+  background: var(--register-primary-hover);
+  transform: translateY(-1px);
+}
+.register-page .register-card form button:active:not(:disabled) {
+  transform: translateY(0);
+}
+.register-page .register-card button:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+.register-page .register-message {
+  margin: 8px 0;
+  font-size: 13px;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.register-page .register-message.error {
+  color: #dc2626;
+}
+.register-page .register-message.success {
+  color: #16a34a;
+}
+.register-page .register-card .register-switch {
+  margin: 15px 0 0;
+  color: var(--register-muted);
+  font-size: 13px;
+  line-height: 1.6;
+  text-align: center;
+}
+.register-page .register-card a {
+  color: var(--register-primary);
+  font-weight: 600;
+  text-decoration: none;
+}
+.register-page .register-card a:hover {
+  text-decoration: underline;
+}
+.register-page .register-home {
+  display: block;
+  margin-top: 10px;
+  color: var(--register-muted);
+  font-size: 13px;
+  text-align: center;
+}
+@media (max-width: 480px) {
+  .register-page {
+    padding: 8px;
+  }
+  .register-page .register-theme-switcher {
+    top: 8px;
+    right: 8px;
+    gap: 5px;
+    padding: 5px 7px;
+  }
+  .register-page .register-theme-switcher label {
+    font-size: 11px;
+  }
+  .register-page .register-theme-switcher select {
+    min-width: 95px;
+    min-height: 30px;
+    font-size: 11px;
+  }
+  .register-page .register-card {
+    padding: 20px;
+    border-radius: 18px;
+  }
+  .register-page .register-card h1 {
+    font-size: 24px;
+  }
+  .register-page .register-brand-icon {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 9px;
+    font-size: 19px;
+  }
+}
+@media (max-height: 760px) {
+  .register-page {
+    padding-top: 52px;
+    padding-bottom: 8px;
+  }
+  .register-page .register-card {
+    padding: 15px 24px;
+  }
+  .register-page .register-brand-icon {
+    width: 34px;
+    height: 34px;
+    margin-bottom: 7px;
+    font-size: 18px;
+  }
+  .register-page .register-card h1 {
+    margin-bottom: 5px;
+    font-size: 23px;
+  }
+ .register-page .register-card form {
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .register-page .register-card input {
+    min-height: 35px;
+    padding: 6px 10px;
+  }
+  .register-page .register-card form button {
+    min-height: 38px;
+    margin-top: 4px;
+    padding: 8px 12px;
+  }
+  .register-page .register-card .register-switch {
+    margin-top: 9px;
+  }
+  .register-page .register-home {
+    margin-top: 6px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .register-page,
+  .register-page *,
+  .register-page *::before,
+  .register-page *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}

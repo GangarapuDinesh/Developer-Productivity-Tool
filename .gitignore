@@ -1,0 +1,27 @@
+# IDE/editor metadata
+.vscode/
+.idea/
+*.iml
+*.swp
+*.swo
+.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Node / frontend
+frontend/node_modules/
+frontend/dist/
+frontend/dist-ssr/
+frontend/.vite/
+
+# Java / backend
+Devbackend/.metadata/
+Devbackend/**/target/
+Devbackend/**/build/
+Devbackend/**/*.class
+
+# Environment files
+.env
+.env.*
